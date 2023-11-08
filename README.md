@@ -24,12 +24,11 @@ Este projeto é uma API em Python que utiliza o framework FastAPI para criar uma
 
 1. Clone o repositório:
 
-```bash
 git clone https://github.com/CaetanoxMTZ/crud_python.git
 cd fastpython
 
 2. Instale os requisitos: 
-```bash
+
 pip install -r requirements.txt
 
 3. Inicie o servidor: 
