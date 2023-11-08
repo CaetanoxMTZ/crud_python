@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html> 
+
+ <head> 
+
+  <meta charset="UTF-8"> 
+
+  <title>Cyberstore</title> 
+  <link rel="icon" type="image/x-icon" href="/static/favicon.png">
+  <link rel="stylesheet" href="/static/styles.css"> 
+
+ </head> 
+
+ <body>
+
+  <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+
+    <div class="centralized">
+      <div class="content">
+          <h2>Atualizar dados</h2>
+          <div class="form">
+            <form>
+                <div class="inputBox">
+                    <input type="text" name="nome" required> <i>Nome</i>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="sobrenome" required> <i>Sobrenome</i>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="data_admissao" required> <i>Data admissão</i>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="status_funcionario" required> <i>Status funcionário</i>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="id_cargo" required> <i>ID do cargo</i>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="id_setor" required> <i>ID do setor</i>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="id_funcionario" required> <i>ID do funcionário a alterar</i>
+                </div>                
+                <div class="inputBox">
+                    <input type="submit" value="Atualizar funcionário">
+                </div>
+                <div class="inputBox">
+                  <a href="/"><button type="button" class="voltar">Voltar</button></a>
+              </div>
+            </form>
+        </div>
+          <div id="message" style="display: none; background-color: #4CAF50; color: white; padding: 10px;">
+          </div>
+      </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const response = await fetch('/att_func', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                messageDiv.textContent = data.message;
+                messageDiv.style.display = 'block';
+            } else {
+                messageDiv.textContent = 'Erro ao atualizar funcionário.';
+                messageDiv.style.backgroundColor = '#FF5733';
+                messageDiv.style.display = 'block';
+            }
+        });
+    });
+</script>
+</body>
+</html>
