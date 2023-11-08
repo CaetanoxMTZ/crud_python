@@ -24,13 +24,21 @@ Este projeto é uma API em Python que utiliza o framework FastAPI para criar uma
 
 1. Clone o repositório:
 
-git clone https://github.com/CaetanoxMTZ/crud_python.git
-cd fastpython
+   git clone https://github.com/CaetanoxMTZ/crud_python.git
+   cd fastpython
 
 2. Instale os requisitos: 
 
-pip install -r requirements.txt
+  pip install -r requirements.txt
 
 3. Inicie o servidor: 
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+  uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+## Uso
+
+- Após a instalação e configuração, a API estará disponível em http://localhost:8000. Você pode acessar a documentação da API em http://localhost:8000/docs para experimentar as operações CRUD.
+
+## Contribuindo
+
+Sinta-se à vontade para contribuir para este projeto. Se você encontrar problemas ou tiver sugestões de melhorias, crie uma issue ou envie uma pull request.
 
